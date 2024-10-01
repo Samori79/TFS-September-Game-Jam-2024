@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
@@ -17,6 +19,10 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
+        //if (timeRemaining <= 0)
+        //{
+        //    SceneManager.LoadScene("GameOver");
+        //}
         if (isTimerRunning)
         {
             if (timeRemaining > 0)
@@ -28,6 +34,7 @@ public class Timer : MonoBehaviour
             {
                 Debug.Log("Time's up!");
                 timeRemaining = 0;
+                SceneManager.LoadScene("GameOver");
                 isTimerRunning = false; // Stop the timer when it reaches zero
             }
         }
