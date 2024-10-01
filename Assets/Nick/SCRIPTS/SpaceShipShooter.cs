@@ -9,7 +9,6 @@ public class EnemyShooter : MonoBehaviour
     public Transform firePoint;
     public float shootingCooldown = 2f;
     public float bulletSpeed = 10f;
-    private float cooldownTimer = 0f;
     private Transform player;
     private bool isPlayerInRange = false;
     private SphereCollider sphereCollider;
