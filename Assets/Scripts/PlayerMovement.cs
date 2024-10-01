@@ -7,6 +7,9 @@ public class PlayerDriftMovement : MonoBehaviour
     public float drag = 0.99f;  // Drag for drifting effect
     public float decelerationForce = 5f;  // Reverse force applied when pressing 'S'
     public float maxSpeed = 20f;  // Maximum allowed speed for the player
+    private bool isStunned = false; //stun state, default false
+    private float stunTimer = 0f; //time remaining on stun
+
 
 
     private Rigidbody rb;
@@ -21,6 +24,18 @@ public class PlayerDriftMovement : MonoBehaviour
 
     void Update()
     {
+
+        //stun logic. If player is stunned, ignore all other input
+        if (isStunned)
+        {
+            stunTimer -= Time.deltaTime;
+            if (stunTimer <= 0f)
+            {
+                isStunned = false; //end stun after the timer runs out.
+            }
+            return; //ignores input during the stun.
+        }
+
         // Rotation: A/D or Left/Right arrow keys rotate the player around the Z-axis
         float turn = Input.GetAxis("Horizontal");  // "Horizontal" maps to A/D or Left/Right
         transform.Rotate(0, 0, -turn * rotationSpeed * Time.deltaTime);
@@ -56,5 +71,14 @@ public class PlayerDriftMovement : MonoBehaviour
 
         Debug.Log("Current Velocity: " + rb.velocity);
 
+    }
+
+    public void StunPlayer(float duration)
+    {
+        isStunned = true;
+        stunTimer = duration;
+       
+        //uncomment this if we want to get rid of all movement
+        //rb.velocity = Vector3.zero;
     }
 }
