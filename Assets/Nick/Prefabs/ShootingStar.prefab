@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3247141741692573834}
   - component: {fileID: 7126617263227087316}
   - component: {fileID: 3889134444676943841}
+  - component: {fileID: 7357945107969599361}
   m_Layer: 0
   m_Name: ShootingStar
   m_TagString: Enemy
@@ -133,3 +134,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 8
   m_CollisionDetection: 0
+--- !u!114 &7357945107969599361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3667551238281896749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54710a3c955e35d4f90d294462f8450e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stunDuration: 0.2
