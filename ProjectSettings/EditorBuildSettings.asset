@@ -5,13 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
+    path: Assets/Nick/MainMenu.unity
+    guid: e47ee5ace1c689246837c6509d5a5ccb
+  - enabled: 0
     path: Assets/Nick/TestingLevel1.unity
     guid: c0e0ce2cf39f51c48b81426557784cac
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: f12bf4f70065eca4faf82eae319db6c7
+  - enabled: 1
+    path: Assets/Scenes/MovementTest.unity
+    guid: 9a6956d145c2f4845b8c0018bbfd8eba
+  - enabled: 1
     path: Assets/Nick/GameOver.unity
     guid: d8e7b2982ba82d64e8650b2aaa69946d
-  - enabled: 1
-    path: Assets/Nick/MainMenu.unity
-    guid: e47ee5ace1c689246837c6509d5a5ccb
   m_configObjects: {}

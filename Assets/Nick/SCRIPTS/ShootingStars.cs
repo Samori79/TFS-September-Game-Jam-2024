@@ -54,9 +54,9 @@ public class ShootingStars : MonoBehaviour
                 randomY = Random.Range(-YRange, YRange);
             }
 
-            Debug.Log(randomSide);
-            Debug.Log(randomX);
-            Debug.Log(randomY);
+           // Debug.Log(randomSide);
+           // Debug.Log(randomX);
+           // Debug.Log(randomY);
 
             Vector3 randomPosition = new Vector3(player.transform.position.x + randomX, player.transform.position.y + randomY, player.transform.position.z);
 

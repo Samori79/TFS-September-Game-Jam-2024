@@ -13,7 +13,7 @@ public class Candy : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             //Player Score increase here
-
+            GameManager.Instance.AddScore(scoreValue);
 
             Destroy(gameObject);
 
