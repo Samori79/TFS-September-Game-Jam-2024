@@ -45,7 +45,7 @@ public class PlayerDriftMovement : MonoBehaviour
         {
             // Move the player in the direction it is facing (along the X-Y plane)
             rb.AddForce(transform.up * thrust);  // Use transform.up for forward direction in a 2D plane
-            Debug.Log("Applying forward force: " + transform.up * thrust);
+            //Debug.Log("Applying forward force: " + transform.up * thrust);
 
            
         }
@@ -53,7 +53,7 @@ public class PlayerDriftMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.S))  // "S" key for deceleration
         {
             rb.AddForce(-transform.up * decelerationForce);  // Apply force in the opposite direction of movement
-            Debug.Log("Applying reverse force: " + -transform.up * decelerationForce);
+            //Debug.Log("Applying reverse force: " + -transform.up * decelerationForce);
         }
     }
 
@@ -61,15 +61,15 @@ public class PlayerDriftMovement : MonoBehaviour
     {
         // Apply drag to the velocity to simulate drifting effect
         rb.velocity *= drag;
-        Debug.Log("Current Velocity: " + rb.velocity);
+        //Debug.Log("Current Velocity: " + rb.velocity);
 
         if (rb.velocity.magnitude > maxSpeed)
         {
             rb.velocity = rb.velocity.normalized * maxSpeed;
-            Debug.Log("Capping speed: " + rb.velocity);
+           // Debug.Log("Capping speed: " + rb.velocity);
         }
 
-        Debug.Log("Current Velocity: " + rb.velocity);
+        //Debug.Log("Current Velocity: " + rb.velocity);
 
     }
 
