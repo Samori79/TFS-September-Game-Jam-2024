@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text scoreText;  // Reference to UI Text for score
    
     public Slider timerBar;
-    public Image sliderHandleImage;
+    public Image timerImage;
     //sprites for squiddy going to bed
     public Sprite phaseOne;
     public Sprite phaseTwo;
@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
     //this is the start of the campaign, should only be called from a button in main menu
     public void StartStageMode()
     {
+        Debug.Log("Starting Stage mode");
         ResetLevel();
         currentState = GameState.Playing;
         uiCanvas.SetActive(true);  // Show the UI when the game starts
@@ -101,12 +102,18 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-
+    
     //specifically for stage mode, to go from one to the next in sucession
     public void LoadStage(int stageIndex)
     {
+        Debug.Log("Current index"+ stageIndex + ", CurrentStageIndex:" + currentStageIndex);
+        Debug.Log("Current count" + stageList.Count);
+        Debug.Log(stageList);
+
+
         if (stageIndex < stageList.Count)
         {
+          
             //load the stage based on index
             LoadScene(stageList[stageIndex]);
         }else
@@ -120,13 +127,14 @@ public class GameManager : MonoBehaviour
 
     public void ResetLevel()
     {
+        //Debug.Log("Resetting Level...");
         levelTimer = defaultTimer; //set time back to 60
         currentScore = defaultScore; //set score to 0
         timerBar.minValue = 0;  // Slider minimum is always 0
         timerBar.maxValue = 1;  // Slider maximum is always 1
         timerBar.value = 1;     // Start the slider full (1 = 100% time remaining)
 
-        UpdateSliderHandle();
+        UpdateTimerImage();
     }
 
     //Timer Management
@@ -142,28 +150,29 @@ public class GameManager : MonoBehaviour
 
 
         timerBar.value = levelTimer / defaultTimer;
-        
-        UpdateSliderHandle();
+
+        UpdateTimerImage();
 
     }
 
     //changes the sprite to match the sleepiness of the lil guy
-    public void UpdateSliderHandle()
+    public void UpdateTimerImage()
     {
+        //Debug.Log("Updating Timer Image");
         float sliderValue = timerBar.value;
 
         if (sliderValue >= 0.75f)
         {
-            sliderHandleImage.sprite = phaseOne;
+            timerImage.sprite = phaseOne;
         } else if (sliderValue >= 0.5f)
         {
-            sliderHandleImage.sprite = phaseTwo;
+            timerImage.sprite = phaseTwo;
         }else if (sliderValue >= 0.25f)
         {
-            sliderHandleImage.sprite = phaseThree;
+            timerImage.sprite = phaseThree;
         }else
         {
-            sliderHandleImage.sprite= phaseFour;
+            timerImage.sprite= phaseFour;
         }
     }
 
@@ -194,6 +203,9 @@ public class GameManager : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        Debug.Log("Returning to Main menu...");
+
+
         currentState = GameState.MainMenu;
         currentStageIndex = 0; //reset stage index
         
