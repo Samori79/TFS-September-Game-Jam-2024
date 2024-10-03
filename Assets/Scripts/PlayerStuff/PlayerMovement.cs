@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class PlayerDriftMovement : MonoBehaviour
 {
@@ -9,7 +10,11 @@ public class PlayerDriftMovement : MonoBehaviour
     public float maxSpeed = 20f;  // Maximum allowed speed for the player
     private bool isStunned = false; //stun state, default false
     private float stunTimer = 0f; //time remaining on stun
-
+    
+    public PlayableDirector pd;
+    public PlayableAsset stunAnim;
+    public PlayableAsset idleAnim;
+    public PlayableAsset moveAnim;
 
 
     private Rigidbody rb;
@@ -28,6 +33,7 @@ public class PlayerDriftMovement : MonoBehaviour
         //stun logic. If player is stunned, ignore all other input
         if (isStunned)
         {
+            
             stunTimer -= Time.deltaTime;
             if (stunTimer <= 0f)
             {
@@ -35,6 +41,8 @@ public class PlayerDriftMovement : MonoBehaviour
             }
             return; //ignores input during the stun.
         }
+
+
 
         // Rotation: A/D or Left/Right arrow keys rotate the player around the Z-axis
         float turn = Input.GetAxis("Horizontal");  // "Horizontal" maps to A/D or Left/Right
@@ -46,9 +54,16 @@ public class PlayerDriftMovement : MonoBehaviour
             // Move the player in the direction it is facing (along the X-Y plane)
             rb.AddForce(transform.up * thrust);  // Use transform.up for forward direction in a 2D plane
             //Debug.Log("Applying forward force: " + transform.up * thrust);
+       
+            PlayAnimation(moveAnim);
 
-           
+
+        }else
+        {
+            PlayAnimation(idleAnim);
+
         }
+
 
         if (Input.GetKey(KeyCode.S))  // "S" key for deceleration
         {
@@ -77,8 +92,22 @@ public class PlayerDriftMovement : MonoBehaviour
     {
         isStunned = true;
         stunTimer = duration;
-       
+        PlayAnimation(stunAnim);
+
+
+
         //uncomment this if we want to get rid of all movement
         //rb.velocity = Vector3.zero;
     }
+
+    private void PlayAnimation(PlayableAsset animation)
+    {
+        if (pd.playableAsset != animation)  // Only play if the animation is different
+        {
+            pd.playableAsset = animation;
+            pd.Play();
+        }
+    }
+
+
 }
