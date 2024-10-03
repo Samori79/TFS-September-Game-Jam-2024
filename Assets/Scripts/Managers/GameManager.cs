@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using System.Collections;
 
 public enum GameState
 {
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     public GameState currentState = GameState.MainMenu; //default to main menu
 
+    public StageDataSO[] stages; //array of stage data SOs
 
     public float levelTimer;
     public int currentScore;
@@ -39,7 +41,7 @@ public class GameManager : MonoBehaviour
     public Sprite phaseThree;
     public Sprite phaseFour;
 
-    public List<string> stageList;  // List of stage scene names
+    //public List<string> stageList;  // List of stage scene names
     private int currentStageIndex = 0; // Track the current stage
 
 
@@ -107,23 +109,42 @@ public class GameManager : MonoBehaviour
     public void LoadStage(int stageIndex)
     {
         Debug.Log("Current index"+ stageIndex + ", CurrentStageIndex:" + currentStageIndex);
-        Debug.Log("Current count" + stageList.Count);
-        Debug.Log(stageList);
+        Debug.Log("Current count" + stages.Length);
+       // Debug.Log(stageList);
 
 
-        if (stageIndex < stageList.Count)
+        if (stageIndex < stages.Length)
         {
-          
+
+
+
             //load the stage based on index
-            LoadScene(stageList[stageIndex]);
-        }else
+            SetStageData();
+            LoadScene(stages[stageIndex].stageName);
+           
+
+            StageInstructionsPopup.Instance.ShowPopup(stages[stageIndex].popUpMessage);
+
+
+        }
+        else
         {
 
-            //this should go to win menu instead
-            GoToMainMenu();
+            //this should go to win menu 
+            VictoryScreen();
         }
     }
 
+    public void SetStageData()
+    {
+        // Return the score requirement for the current stage
+        if (currentStageIndex < stages.Length)
+        {
+           scoreThreshold = stages[currentStageIndex].scoreRequirement;
+            defaultTimer = stages[currentStageIndex].timeLimit;
+        }
+         // Default to 0 if no valid stage data
+    }
 
     public void ResetLevel()
     {
@@ -235,6 +256,24 @@ public class GameManager : MonoBehaviour
         currentState = GameState.GameOver;
         uiCanvas.SetActive(false);  // Hide the UI when returning to the main menu
         LoadScene("GameOver");
+    }
+
+    public void VictoryScreen()
+    {
+        Debug.Log("Game won!");
+        currentState = GameState.GameOver;
+        uiCanvas.SetActive(false);
+        LoadScene("VictoryScreen");
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quitting the game...");
+        Application.Quit();
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false; // Stop play mode in the editor
+#endif
     }
 
 }
