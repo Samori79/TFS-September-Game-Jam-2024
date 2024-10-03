@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public Button stageButton; // Reference to the button
+    public Button quitButton;
 
     private void Start()
     {
@@ -18,10 +19,16 @@ public class MainMenu : MonoBehaviour
         {
             Debug.LogWarning("Start Button not assigned in the Inspector.");
         }
+
+        if (quitButton != null)
+        {
+            quitButton.onClick.AddListener(manager.QuitGame); // Add listener programmatically
+        }
+        else
+        {
+            Debug.LogWarning("Quit Button not assigned in the Inspector.");
+        }
     }
 
-    public void QuitGame()
-    {
-        Application.Quit(); // Quit the application
-    }
+    
 }

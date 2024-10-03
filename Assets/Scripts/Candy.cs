@@ -25,18 +25,18 @@ public class Candy : MonoBehaviour
     switch (scoreValue)
     {
     //give the player a small boost of speed
-    case 100:
+    case 5:
     SpeedBoost();
     break;
 
     //add time to the timer
-    case 200:
+    case 10:
     TimeBoost();
     break;
 
 
     //make the player immune to stuns/time decreases
-    case 300:
+    case 15:
     Invulnerable();
     break;
     

@@ -14,10 +14,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: f12bf4f70065eca4faf82eae319db6c7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MovementTest.unity
     guid: 9a6956d145c2f4845b8c0018bbfd8eba
   - enabled: 1
-    path: Assets/Nick/GameOver.unity
+    path: Assets/Scenes/Stage1.unity
+    guid: c7a20fe2abe2f7546b196d3f41d79deb
+  - enabled: 1
+    path: Assets/Scenes/Stage2.unity
+    guid: ccc1f64800861844e92f89fe36851f44
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
     guid: d8e7b2982ba82d64e8650b2aaa69946d
+  - enabled: 1
+    path: Assets/Scenes/VictoryScreen.unity
+    guid: faf0d51ee18c42541b25bfc723e6e38f
   m_configObjects: {}
