@@ -663,6 +663,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpaceShip
       objectReference: {fileID: 0}
+    - target: {fileID: 5230321427741993642, guid: ec0401b3567aecb4fbe5865b19c686ae, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -746,6 +750,7 @@ PrefabInstance:
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dcf77e54fb71d94993dafb970a935f4, type: 3}
 --- !u!1 &1041280288
+
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1333,10 +1338,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid (1)
       objectReference: {fileID: 0}
+
     - target: {fileID: 7249708448249186090, guid: 9dcf77e54fb71d94993dafb970a935f4, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1491,6 +1498,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dcf77e54fb71d94993dafb970a935f4, type: 3}
+
 --- !u!1001 &4542088532692616441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1552,6 +1560,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 479b1989ce7e5424e91fe9d470514b16, type: 3}
+
 --- !u!1001 &6397019086751054350
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1628,7 +1637,9 @@ SceneRoots:
   - {fileID: 1701824845}
   - {fileID: 943330431}
   - {fileID: 429646041}
+
   - {fileID: 4542088532692616441}
   - {fileID: 797977649}
+
   - {fileID: 1041280291}
   - {fileID: 290624315}
