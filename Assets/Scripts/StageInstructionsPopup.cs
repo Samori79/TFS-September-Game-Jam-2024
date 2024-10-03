@@ -7,6 +7,7 @@ public class StageInstructionsPopup : MonoBehaviour
     public static StageInstructionsPopup Instance { get; private set; }
 
     public GameObject popupPanel;  // Reference to the pop-up panel
+    public TMP_Text levelTitleText;
     public TMP_Text instructionText; // Reference to the instruction text
     public Button okButton;  // Reference to the OK button
 
@@ -29,10 +30,11 @@ public class StageInstructionsPopup : MonoBehaviour
     }
 
     // Call this method to show the pop-up
-    public void ShowPopup(string message)
+    public void ShowPopup(string message, string title)
     {
         // Show the pop-up and set the instruction text
         popupPanel.SetActive(true);
+        levelTitleText.text = "Level:" + title;
         instructionText.text = message;
         Time.timeScale = 0;  // Pause the game
     }

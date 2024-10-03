@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad8b3bf3af7f98f499ccfac9e3aa8d5b, type: 3}
-  m_Name: Stage1SO
+  m_Name: Stage3S0
   m_EditorClassIdentifier: 
-  stageName: Stage1
-  scoreRequirement: 15
-  timeLimit: 60
-  levelName: Star Nursery
-  popUpMessage: Arise, young one! The stirring of mortals awakens you...  and you
-    are hungry.W to accelerate, A/D to turn, S to decelerate. Eat the necessary score
-    to advance before time runs out!
+  stageName: Stage3
+  scoreRequirement: 60
+  timeLimit: 180
+  levelName: Nursery Invasion!
+  popUpMessage: You return to your nursery for a quick nap after a long day of feasting.
+    But you are rudely waken up by a puny mortal invasion force! Show them who's
+    boss, and devour their tasty things.
