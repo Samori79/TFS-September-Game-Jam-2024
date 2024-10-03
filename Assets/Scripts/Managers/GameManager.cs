@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
             LoadScene(stages[stageIndex].stageName);
            
 
-            StageInstructionsPopup.Instance.ShowPopup(stages[stageIndex].popUpMessage);
+            StageInstructionsPopup.Instance.ShowPopup(stages[stageIndex].popUpMessage, stages[stageIndex].levelName);
 
 
         }

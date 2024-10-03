@@ -1098,6 +1098,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6237804447970578743, guid: b2e103b02ab6bb5468028e3707c1d15b, type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6237804447970578743, guid: b2e103b02ab6bb5468028e3707c1d15b, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260986368791534739, guid: b2e103b02ab6bb5468028e3707c1d15b, type: 3}
+      propertyPath: m_fontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260986368791534739, guid: b2e103b02ab6bb5468028e3707c1d15b, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 9031452686411376422, guid: b2e103b02ab6bb5468028e3707c1d15b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1291,6 +1307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageButton: {fileID: 190923939}
+  quitButton: {fileID: 0}
 --- !u!114 &837037029
 MonoBehaviour:
   m_ObjectHideFlags: 0
