@@ -985,7 +985,8 @@ PrefabInstance:
       value: SpaceShip (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5407542508455960934, guid: c773d4bd0e9c985468dbec460bed67ab, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c773d4bd0e9c985468dbec460bed67ab, type: 3}
@@ -3666,7 +3667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1824876421
 MeshCollider:
   m_ObjectHideFlags: 0
