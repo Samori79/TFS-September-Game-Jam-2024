@@ -215,6 +215,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5926509963515233499}
     m_Modifications:
+    - target: {fileID: 421699786979758362, guid: 78b47c81846579240824cf2ddd1ca02e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5235488994391234711, guid: 78b47c81846579240824cf2ddd1ca02e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5847141139595736296, guid: 78b47c81846579240824cf2ddd1ca02e, type: 3}
       propertyPath: m_Name
       value: satalite 1 (1)
